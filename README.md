@@ -1,2 +1,7 @@
-# fullnodebsc
-A simple example of how to run fullnode in Binance Smart Chain in an automated way
+# HW
+
+Ubuntu Server
+
+AMD Ryzen™ 7 3700X
+128 GB DDR4 ECC
+2 x 1.92 TB (nvme)
