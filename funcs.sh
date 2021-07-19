@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function msg() {
-  printf "$(tput setaf 2)[ INFO ]$(tput sgr 0) $*\n"
+  printf "$(tput setaf 2)\n[ INFO ]$(tput sgr 0) $*\n"
 }
 
 function get_latest_tag() {
