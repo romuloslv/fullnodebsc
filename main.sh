@@ -10,9 +10,9 @@ apt upgrade
 msg "installing packages..."
 apt install -y build-essential python3-venv \
                python3-pip libssl-dev unzip \
-			   python3-dev libffi-dev golang \
-			   inxi hdparm vim git tmux htop \
-			   ncurses nc jq
+	       python3-dev libffi-dev golang \
+               inxi hdparm vim git tmux htop \
+               ncurses nc jq
 
 msg "setting paths..."
 get_clone_repo
