@@ -11,9 +11,9 @@ if [ $version = "ubuntu" ] || [ $version = "debian" ]; then
 	
 	msg "installing packages..."
 	apt-get install -y build-essential python3-venv hdparm \
-                       python3-pip libssl-dev unzip netcat \
-                       python3-dev libffi-dev golang nmap \
-                       inxi vim git tmux htop jq
+                           python3-pip libssl-dev unzip netcat \
+                           python3-dev libffi-dev golang nmap \
+                           inxi vim git tmux htop jq
 	
 	msg "setting paths..."
 	get_clone_repo
