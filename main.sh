@@ -15,7 +15,7 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
                            inxi vim git tmux htop jq
 	
 	get_msg "setting paths..."
-	get_clone_repo
+	cd /opt && get_clone_repo
 	cd bsc && make geth
 	
 	get_msg "get mainnet $(get_latest_tag)"
