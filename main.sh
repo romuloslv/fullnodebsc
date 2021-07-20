@@ -33,7 +33,7 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
 
     get_msg "initial tmux"
     printf "$ tmux ls; #list sessions\n"
-    printf "$ tmux attach -t fullnode; #attach session\n"
+    printf "$ tmux attach -t fullnode; #attach session\n\n"
 else
     get_msg "OS not supported..."
     exit 1
