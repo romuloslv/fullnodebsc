@@ -4,9 +4,9 @@
 
 if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
 	(get_msg "updating environment..."
-	apt update -qq && \
-	apt list --upgradable && \
-	apt upgrade -y
+	apt-get update -qq && \
+	apt-get list --upgradable && \
+	apt-get upgrade -y
 	
 	get_msg "installing packages..."
 	apt-get install -y build-essential python3-venv hdparm \
