@@ -16,7 +16,7 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
                            inxi vim git tmux htop jq) >> install.log
 	
 	get_msg "setting paths..."
-	[ -d "/opt/bsc" ] || cd /opt && get_clone_repo
+	cd /opt && [ -d "/opt/bsc" ] || get_clone_repo
 	cd bsc && make geth >> install.log
 	
 	get_msg "get mainnet $(get_latest_tag)"
