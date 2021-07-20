@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-. funcs.sh
-version=$(cat /etc/os-release | grep -i "^id=" | awk -F '=' '{print $2}')
+. funcs.conf
+version=$(grep "^ID=" /etc/os-release | awk -F '=' '{print $2}')
 
 if [ $version = "ubuntu" ] || [ $version = "debian" ]; then
 	(msg "updating environment..."
