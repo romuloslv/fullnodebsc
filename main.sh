@@ -6,17 +6,17 @@ set -e
 
 if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     get_msg "updating environment..."
-    apt-get update && apt-get upgrade -y
+    (apt-get update && apt-get upgrade -y) >/dev/null 2>&1
 
     get_msg "installing packages..."
-    apt-get install -y build-essential python3-venv hdparm \
-                       python3-pip libssl-dev unzip netcat \
-                       python3-dev libffi-dev golang nmap \
-                       inxi vim git tmux htop jq
+    (apt-get install -y build-essential python3-venv hdparm \
+                        python3-pip libssl-dev unzip netcat \
+                        python3-dev libffi-dev golang nmap \
+                        inxi vim git tmux htop jq) >/dev/null 2>&1
 
     get_msg "setting paths..."
     [ ! -d "/opt/bsc" ] || rm -rf /opt/bsc && get_clone_repo
-    cd bsc && make -s geth
+    cd /opt/bsc && make -s geth
 
     get_msg "get mainnet $(get_latest_tag)"
     get_latest_release
