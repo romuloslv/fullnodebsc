@@ -7,3 +7,10 @@ Ubuntu Server
 - 128 GB DDR4 ECC
 - 2 x 1.92 TB (nvme)
 <!-- TOC -->
+
+TL;DR
+
+```bash
+chmod +x main.sh
+./main.sh
+```
