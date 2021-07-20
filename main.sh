@@ -6,8 +6,7 @@ set -e
 
 if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     (get_msg "updating environment..."
-    (apt-get update
-     apt-get upgrade -y) >> install.log
+    (apt-get update && apt-get upgrade -y) >> install.log
 
     get_msg "installing packages..."
     (apt-get install -y build-essential python3-venv hdparm \
