@@ -11,6 +11,5 @@ Ubuntu Server
 TL;DR
 
 ```bash
-chmod +x main.sh
-./main.sh
+./install-node
 ```
