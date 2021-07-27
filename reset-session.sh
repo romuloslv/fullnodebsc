@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-local DIR="/root/fullnodebsc/bsc"
+local DIR="$(find / -iname config.toml | cut -d '/' -f 1-4)"
 local SESSION="$(tmux ls | awk -F ':' '{print $1}')"
 
 tmux kill-session -t $SESSION && tmux new -d -s $SESSION
