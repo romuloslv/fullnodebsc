@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DIR="$(find / -iname config.toml | cut -d '/' -f 1-4)"
+DIR="$(find / -iname config.toml 2>/dev/null | cut -d '/' -f 1-4)"
 SESSION="$(tmux ls | awk -F ':' '{print $1}')"
 
 tmux kill-session -t $SESSION && tmux new -d -s $SESSION
