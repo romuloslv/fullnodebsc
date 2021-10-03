@@ -11,8 +11,10 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     get_msg "installing packages..."
     (apt-get install -y build-essential python3-venv hdparm \
                         python3-pip libssl-dev unzip netcat \
-                        python3-dev libffi-dev golang nmap \
-                        inxi vim git tmux htop jq) >/dev/null 2>&1
+                        python3-dev libffi-dev htop jq nmap \
+                        inxi vim git tmux) >/dev/null 2>&1
+    
+    install_latest_go
 
     get_msg "setting paths..."
     [ ! -d "/opt/bsc" ] || rm -rf /opt/bsc && get_clone_repo
