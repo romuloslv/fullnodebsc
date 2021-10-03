@@ -25,17 +25,21 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     unzip -q mainnet.zip && rm -f $_
 
     get_msg "running node..."
-    get_open_session && sleep 3
+    create_service_geth && sleep 3
 
     get_msg "installation completed..."
 
     get_msg "default directory/logs"
     printf "/opt/bsc\n"
     printf "/opt/install.log\n"
+    printf "journalctl -fau geth\n"
 
-    get_msg "initial tmux"
-    printf "$ tmux ls; #list sessions\n"
-    printf "$ tmux attach -t fullnode; #attach session\n\n"
+    get_msg "disclaimer"
+    printf "$ systemctl status geth; #status service\n"
+    printf "$ systemctl stop geth; #stop service\n"
+    printf "$ systemctl start geth; #start service\n"
+    printf "$ systemctl restart geth; #restart service\n"
+    printf "$ systemctl disable geth; #disable service\n\n"
 else
     get_msg "OS not supported..."
     exit 1
