@@ -1,0 +1,17 @@
+[Unit]
+Description=Ethereum go client
+After=syslog.target network.target
+
+[Service]
+User=root
+Group=root
+Type=simple
+ExecStart=/opt/bsc/build/bin/geth --config /opt/bsc/config.toml --datadir /opt/bsc/node --cache 18000 --rpc.allow-unprotected-txs --txlookuplimit 0 --nat extip:<external IP>
+KillMode=process
+KillSignal=SIGINT
+TimeoutStopSec=90
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
