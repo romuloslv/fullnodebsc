@@ -6,7 +6,7 @@ After=syslog.target network.target
 User=root
 Group=root
 Type=simple
-ExecStart=/opt/bsc/build/bin/geth --config /opt/bsc/config.toml --datadir /opt/bsc/node --cache 18000 --rpc.allow-unprotected-txs --txlookuplimit 0 --nat extip:/usr/bin/curl ifconfig.me
+ExecStart=/opt/bsc/build/bin/geth --config /opt/bsc/config.toml --datadir /opt/bsc/node --cache 18000 --rpc.allow-unprotected-txs --txlookuplimit 0 --ws --ws.port=8546  --ws.origins=* --nat extip:/usr/bin/curl ifconfig.me
 KillMode=process
 KillSignal=SIGINT
 TimeoutStopSec=90
