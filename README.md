@@ -11,5 +11,5 @@ Ubuntu Server
 TL;DR
 
 ```bash
-./install-node
+./main.sh
 ```
