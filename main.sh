@@ -18,7 +18,8 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
 
     get_msg "setting paths..."
     [ ! -d "/opt/bsc" ] || rm -rf /opt/bsc && get_clone_repo
-    cd /opt/bsc && make -s geth
+    mv geth.service /etc/systemd/system/
+    cd /opt/bsc && (make geth) >/dev/null 2>&1
 
     get_msg "get mainnet $(get_latest_tag)"
     get_latest_release
