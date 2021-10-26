@@ -13,7 +13,7 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
                         python3-pip libssl-dev unzip netcat \
                         python3-dev libffi-dev htop jq nmap \
                         inxi vim git tmux) >/dev/null 2>&1
-    
+
     install_latest_go
 
     get_msg "setting paths..."
