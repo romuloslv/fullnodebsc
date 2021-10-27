@@ -31,9 +31,8 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
 
     get_msg "installation completed..."
 
-    get_msg "default directory/logs"
-    printf "/opt/bsc\n"
-    printf "/opt/install.log\n"
+    get_msg "manipulate logs"
+    printf "/opt/bsc\bsc.logn"
     printf "journalctl -fau geth\n"
 
     get_msg "disclaimer"
