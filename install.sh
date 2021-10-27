@@ -15,11 +15,11 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
                         inxi vim git tmux) >/dev/null 2>&1
 
     get_msg "get golang $(curl -s https://golang.org/VERSION?m=text)"
+    [ -d "/usr/local/go" ] && rm -rf /usr/local/go
     install_latest_go
 
     get_msg "setting paths..."
     [ ! -d "/opt/bsc" ] || rm -rf /opt/bsc && get_clone_repo
-    [ -d "/usr/local/go" ] && rm -rf /usr/local/go
     [ -f "/etc/systemd/system/geth.service" ] && rm -rf /etc/systemd/system/geth.service
     mv geth.service /etc/systemd/system/
     cd /opt/bsc && source ~/.bashrc && make -s geth #>/dev/null 2>&1
