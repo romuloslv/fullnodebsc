@@ -14,6 +14,7 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
                         python3-dev libffi-dev htop jq nmap \
                         inxi vim git tmux) >/dev/null 2>&1
 
+    get_msg "get golang $(curl -s https://golang.org/VERSION?m=text)"
     install_latest_go
 
     get_msg "setting paths..."
