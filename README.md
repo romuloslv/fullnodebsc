@@ -11,5 +11,7 @@ Ubuntu Server
 TL;DR
 
 ```bash
-./install.sh
+git clone https://github.com/romuloslv/fullnodebsc.git
+chmod +x fullnodebsc/install.sh
+cd fullnodebsc && ./install.sh
 ```
