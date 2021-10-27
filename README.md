@@ -11,5 +11,5 @@ Ubuntu Server
 TL;DR
 
 ```bash
-./main.sh
+./install.sh
 ```
