@@ -31,8 +31,7 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     build/bin/geth --datadir node init genesis.json
 
     get_msg "running node..."
-    create_service_geth && sleep 3
-
+    create_service_geth
     get_msg "installation completed..."
 
     get_msg "manipulate logs"
