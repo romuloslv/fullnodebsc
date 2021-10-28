@@ -1,6 +1,6 @@
 # HW
 
-Ubuntu Server
+Debian Server
 
 <!-- TOC -->
 - AMD Ryzen™ 7 3700X
