@@ -5,7 +5,7 @@ Debian Server
 <!-- TOC -->
 - AMD Ryzen™ 7 3700X
 - 128 GB DDR4 ECC
-- 2 x 1.92 TB (nvme)
+- 2 x 1.92 TB (nvme raid0)
 <!-- TOC -->
 
 TL;DR
