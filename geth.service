@@ -7,7 +7,7 @@ User=geth
 Group=geth
 Type=simple
 WorkingDirectory=/opt/bsc
-ExecStart=/opt/bsc/build/bin/geth --config config.toml --datadir node --cache 18000 --rpc.allow-unprotected-txs --txlookuplimit 0 --ws --ws.port=8546  --ws.origins=*
+ExecStart=build/bin/geth --config config.toml --datadir node --cache 18000 --rpc.allow-unprotected-txs --txlookuplimit 0 --ws --ws.port=8546  --ws.origins=*
 KillMode=process
 KillSignal=SIGINT
 TimeoutStopSec=90
