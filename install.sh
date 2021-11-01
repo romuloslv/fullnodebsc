@@ -22,14 +22,14 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     [ ! -d "/opt/bsc" ] || rm -rf /opt/bsc && get_clone_repo
     [ -f "/etc/systemd/system/geth.service" ] && rm -rf /etc/systemd/system/geth.service
     mv geth.service /etc/systemd/system/ && useradd -s /sbin/nologin geth || true
-    chown -R geth:geth /usr/local/go && cd /opt/bsc
-    eval "$(cat ~/.bashrc | tail -n -1)" && (make geth) >/dev/null 2>&1
+    cd /opt/bsc && eval "$(cat ~/.bashrc | tail -n -1)"
+    (make geth) >/dev/null 2>&1
 
     get_msg "get mainnet $(get_latest_tag)"
     get_latest_release
     unzip -q mainnet.zip && rm -f $_
     build/bin/geth --datadir node init genesis.json
-    chown -R geth:geth /opt/bsc genesis.json
+    chown -R geth:geth /usr/local/go /opt/bsc genesis.json
 
     get_msg "running node..."
     create_service_geth
