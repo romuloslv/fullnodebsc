@@ -22,7 +22,7 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     [ ! -d "/opt/bsc" ] || rm -rf /opt/bsc && get_clone_repo
     [ -f "/etc/systemd/system/geth.service" ] && rm -rf /etc/systemd/system/geth.service
     mv geth.service /etc/systemd/system/ && useradd -s /sbin/nologin geth || true
-    chown -R geth:geth /opt/bsc /usr/local/go && cd /opt/bsc
+    chown -R geth:geth /opt/bsc/* /usr/local/go && cd /opt/bsc
     eval "$(cat ~/.bashrc | tail -n -1)" && (make geth) >/dev/null 2>&1
 
     get_msg "get mainnet $(get_latest_tag)"
