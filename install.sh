@@ -23,12 +23,13 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     [ -f "/etc/systemd/system/geth.service" ] && rm -rf /etc/systemd/system/geth.service
     mv geth.service /etc/systemd/system/ && useradd -s /sbin/nologin geth || true
     chown -R geth:geth /opt/bsc /usr/local/go && cd /opt/bsc
-    source ~/.bashrc && (make geth) >/dev/null 2>&1
+    eval "$(cat ~/.bashrc | tail -n -1)" && (make geth) >/dev/null 2>&1
 
     get_msg "get mainnet $(get_latest_tag)"
     get_latest_release
     unzip -q mainnet.zip && rm -f $_
     build/bin/geth --datadir node init genesis.json
+    chown geth:geth genesis.json
 
     get_msg "running node..."
     create_service_geth
