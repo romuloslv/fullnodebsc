@@ -21,7 +21,7 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     get_msg "setting paths..."
     [ ! -d "/opt/bsc" ] || rm -rf /opt/bsc && get_clone_repo
     [ -f "/etc/systemd/system/geth.service" ] && rm -rf /etc/systemd/system/geth.service
-    mv geth.service /etc/systemd/system/ && useradd -s /sbin/nologin geth
+    mv geth.service /etc/systemd/system/ && useradd -s /sbin/nologin geth || true
     chown -R geth:geth /opt/bsc && cd /opt/bsc
     source ~/.bashrc && (make geth) >/dev/null 2>&1
 
