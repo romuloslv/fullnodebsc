@@ -36,7 +36,7 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     get_msg "installation completed..."
 
     get_msg "manipulate logs"
-    printf "/opt/bsc/bsc.log\n"
+    printf "/opt/bsc/node/bsc.log\n"
     printf "journalctl -fau geth\n"
 
     get_msg "disclaimer"
