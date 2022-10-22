@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-set -e
+set -ex
 
-. funcs.conf
+source funcs.conf
 
 if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     get_msg "updating environment..."
@@ -36,15 +36,10 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
     get_msg "installation completed..."
 
     get_msg "manipulate logs"
-    printf "/opt/bsc/node/bsc.log\n"
-    printf "journalctl -fau geth\n"
+    printf "/opt/bsc/node/bsc.log or journalctl\n"
 
     get_msg "disclaimer"
-    printf "$ systemctl status geth; #status service\n"
-    printf "$ systemctl stop geth; #stop service\n"
-    printf "$ systemctl start geth; #start service\n"
-    printf "$ systemctl restart geth; #restart service\n"
-    printf "$ systemctl disable geth; #disable service\n\n"
+    printf "Use systemd to manager your service\n"
 else
     get_msg "OS not supported..."
     exit 1
