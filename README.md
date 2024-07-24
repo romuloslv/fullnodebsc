@@ -11,5 +11,6 @@ Debian Server
 TL;DR
 
 ```bash
-git clone https://github.com/pedrobonfim/fullnodebsc.git && cd fullnodebsc && chmod +x install.sh && ./install.sh
+git clone https://github.com/romuloslv/fullnodebsc.git && \
+cd fullnodebsc && chmod +x install.sh && ./install.sh
 ```
